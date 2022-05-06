@@ -22,14 +22,14 @@ class App:
         <div id="box">
 
             <div id="poster">
-                <img id="image" src ="{data["Poster"]}">
+                <img id="image" src ="{data["Poster"]} alt="Image Not Found"">
             </div>
 
             <div id="text_data">
                 
                 <div id="title">
                     <b>{data["Title"]}</b><br>
-                    25 Mar 2022
+                    {data["Released"]}
                 </div>
 
                 <div id="innertext_data">
@@ -58,12 +58,22 @@ class App:
                         <b>Writer:</b>
                         {data["Writer"]}
                     </div>
+                    <div id="txt">
+                        <b>IMDB Rating:</b>
+                        {data["imdbRating"]}/10
+                    </div>
+                    <div id="txt">
+                        <b>Country:</b>
+                        {data["Country"]}
+                    </div>
                 </div>
 
             </div>
         </div>
             
         '''
+
+        
         self.js.document.getElementById("data").innerHTML = i;
         
 

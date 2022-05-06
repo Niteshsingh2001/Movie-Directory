@@ -6,4 +6,12 @@ url = f"http://www.omdbapi.com/?apikey=afb102e2&t=RRR"
 # url = f"http://www.omdbapi.com/?apikey=afb102e2t=RRR"
 
 data = req.get(url)
-pprint.pprint(json.loads(data.content))
+print(data)
+x = json.loads(data.content)
+pprint.pprint(x.keys())
+
+print(x["Response"])
+if "Error" in x.keys():
+        pprint.pprint(x["Response"])
+else:
+        pprint.pprint("xyz")
